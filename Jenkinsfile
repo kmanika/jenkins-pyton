@@ -3,12 +3,17 @@ pipeline {
     stages {
         stage('Git Pull') {
             steps {
-                echo 'Git pull success'
+                echo 'Code Pulling'
+                sh 'git clone https://github.com/kmanika/lambda-tf.git'
             }
         }
         stage('terraform plan') {
             steps {
-                echo 'terraform init & apply'
+                sh 'cd ./lambda-tf'
+                echo 'terraform init'
+                sh 'terraform init'
+                echo 'terraform plan'
+                sh 'terraform plan'
             }
         }
         stage('terraform apply') {
