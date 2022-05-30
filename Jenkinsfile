@@ -10,6 +10,7 @@ pipeline {
         stage('terraform plan') {
             steps {
                 sh 'cd ./lambda-tf'
+                sh 'ls -ltr'
                 echo 'terraform init'
                 sh 'terraform init'
                 echo 'terraform plan'
