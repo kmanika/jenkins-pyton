@@ -24,3 +24,8 @@ pipeline {
         }
     }
 }
+post {
+    always {
+        cleanWs()
+    }
+}
