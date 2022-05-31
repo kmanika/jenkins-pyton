@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Git Pull') {
             steps {
+                cleanWs()
                 echo 'Code Pulling'
                 sh 'git clone https://github.com/kmanika/lambda-tf.git'
             }
