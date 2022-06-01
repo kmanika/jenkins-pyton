@@ -3,17 +3,15 @@ pipeline {
     stages {
         stage('Git Pull') {
             steps {
-                echo 'Code Pulling'
+                echo 'Code Pullingss'
                 sh 'git clone https://github.com/kmanika/lambda-tf.git'
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'cd ./lambda-tf'
+                sh 'cd ./lambda-tf/lambda-tf'
                 sh 'ls -ltr'
-                echo 'terraform init'
                 sh 'terraform init'
-                echo 'terraform plan'
                 sh 'terraform plan'
             }
         }
@@ -25,7 +23,8 @@ pipeline {
     }
 }
 post {
-    always {
-        cleanWs()
+        always {
+            cleanWs()
+        }
     }
 }
