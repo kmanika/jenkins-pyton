@@ -2,7 +2,7 @@ import random
 diff_list = []
 sorted_list = []
 # printing the random number
-randomlist = random.sample(range(0, 1000), 15)
+randomlist = random.sample(range(0, 1000), 6)
 print(randomlist)
 # sorting the random number
 randomlist.sort()
@@ -14,19 +14,13 @@ for i in range(1,len(randomlist)):
 print(diff_list)
 
 #Most common distance
-def  frequent_val(diff_list):
+def frequent_val(diff_list):
     temp = 0
-    itteraions = 0
-    a = 0
     num = diff_list[0]
     for i in diff_list:
         curr_val = diff_list.count(i)
-        #print("in for: ",curr_val)
         if (curr_val > temp):
             temp = curr_val
             num = i
-            a = a+1
-    if a > 1:
-        return num,a
-
+    return num
 print(frequent_val(diff_list))
